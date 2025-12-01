@@ -20,41 +20,6 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11
         {
             textBoxCondition_SAV.Text = "Дан массив 5 на 5 элементов.\r\nВыполнить сортировку по возрастанию в первом столбце.\r\n\r\nИсходный массив:\r\n27 -15  14   2  27\r\n-8  14 -10  33   0\r\n1   7 -11 -11  23\r\n-13 -20  15 -16  34\r\n-3   1 -1   5   1";
         }
-
-        private void LoadMatrixToGrid()
-        {
-            int[,] matrix = ds.GetMatrix();
-
-            dataGridViewMatrix_SAV.ColumnCount = 5;
-            dataGridViewMatrix_SAV.RowCount = 5;
-            dataGridViewMatrix_SAV.RowHeadersVisible = false;
-            dataGridViewMatrix_SAV.ColumnHeadersVisible = false;
-
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    dataGridViewMatrix_SAV[j, i].Value = matrix[i, j];
-                    dataGridViewMatrix_SAV[j, i].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                }
-            }
-        }
-
-        private void buttonExecute_SAV_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int[,] matrix = ds.GetMatrix();
-                int[,] sortedMatrix = SortFirstColumn(matrix);
-                ShowResult(sortedMatrix);
-                ShowResultInGrid(sortedMatrix);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private int[,] SortFirstColumn(int[,] matrix)
         {
             int rows = matrix.GetLength(0);
