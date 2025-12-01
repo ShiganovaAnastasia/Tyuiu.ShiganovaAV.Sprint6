@@ -39,6 +39,7 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
                 {
                     if (result[i, 0] > result[j, 0])
                     {
+                        // Меняем местами ТОЛЬКО ПЕРВЫЕ ЭЛЕМЕНТЫ СТРОК
                         int temp = result[i, 0];
                         result[i, 0] = result[j, 0];
                         result[j, 0] = temp;
