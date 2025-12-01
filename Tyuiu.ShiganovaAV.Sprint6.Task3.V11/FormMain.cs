@@ -27,8 +27,8 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             labelCondition = new Label();
             labelOutput = new Label();
             textBoxCondition_SAV = new TextBox();
@@ -93,31 +93,31 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11
             // 
             dataGridViewMatrix_SAV.AllowUserToAddRows = false;
             dataGridViewMatrix_SAV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridViewMatrix_SAV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewMatrix_SAV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewMatrix_SAV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGridViewMatrix_SAV.DefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewMatrix_SAV.Location = new Point(38, 267);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewMatrix_SAV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewMatrix_SAV.Location = new Point(15, 267);
             dataGridViewMatrix_SAV.Margin = new Padding(3, 4, 3, 4);
             dataGridViewMatrix_SAV.Name = "dataGridViewMatrix_SAV";
             dataGridViewMatrix_SAV.ReadOnly = true;
             dataGridViewMatrix_SAV.RowHeadersVisible = false;
             dataGridViewMatrix_SAV.RowHeadersWidth = 51;
             dataGridViewMatrix_SAV.RowTemplate.Height = 24;
-            dataGridViewMatrix_SAV.Size = new Size(210, 150);
+            dataGridViewMatrix_SAV.Size = new Size(280, 150);
             dataGridViewMatrix_SAV.TabIndex = 4;
             dataGridViewMatrix_SAV.CellContentClick += dataGridViewMatrix_SAV_CellContentClick;
             // 
@@ -126,14 +126,14 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11
             dataGridViewResult_SAV.AllowUserToAddRows = false;
             dataGridViewResult_SAV.AllowUserToDeleteRows = false;
             dataGridViewResult_SAV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewResult_SAV.Location = new Point(57, 267);
+            dataGridViewResult_SAV.Location = new Point(17, 267);
             dataGridViewResult_SAV.Margin = new Padding(3, 4, 3, 4);
             dataGridViewResult_SAV.Name = "dataGridViewResult_SAV";
             dataGridViewResult_SAV.ReadOnly = true;
             dataGridViewResult_SAV.RowHeadersVisible = false;
             dataGridViewResult_SAV.RowHeadersWidth = 51;
             dataGridViewResult_SAV.RowTemplate.Height = 24;
-            dataGridViewResult_SAV.Size = new Size(210, 150);
+            dataGridViewResult_SAV.Size = new Size(287, 150);
             dataGridViewResult_SAV.TabIndex = 5;
             dataGridViewResult_SAV.CellContentClick += dataGridViewResult_SAV_CellContentClick;
             // 
