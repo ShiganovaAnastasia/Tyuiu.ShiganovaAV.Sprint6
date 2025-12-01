@@ -1,23 +1,36 @@
-﻿using Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib;
+
 namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Test
 {
     [TestClass]
-    public sealed class DataServiceTest
+    public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidCalculate()
         {
             DataService ds = new DataService();
-
             int[,] matrix = ds.GetMatrix();
+            int[,] result = ds.Calculate(matrix);
 
-            Assert.AreEqual(5, matrix.GetLength(0));
-            Assert.AreEqual(5, matrix.GetLength(1));
+            int[,] expected = {
+                { -13, -20, 15, -16, 34 },
+                {  -8,  14, -10, 33,  0 },
+                {  -3,   1, -1,   5,  1 },
+                {   1,   7, -11, -11, 23 },
+                {  27, -15, 14,   2, 27 }
+            };
 
-            Assert.AreEqual(27, matrix[0, 0]);
-            Assert.AreEqual(-15, matrix[0, 1]);
-            Assert.AreEqual(-13, matrix[3, 0]);
-            Assert.AreEqual(34, matrix[3, 4]);
+            Assert.AreEqual(expected.GetLength(0), result.GetLength(0));
+            Assert.AreEqual(expected.GetLength(1), result.GetLength(1));
+
+            for (int i = 0; i < expected.GetLength(0); i++)
+            {
+                for (int j = 0; j < expected.GetLength(1); j++)
+                {
+                    Assert.AreEqual(expected[i, j], result[i, j]);
+                }
+            }
         }
     }
 }

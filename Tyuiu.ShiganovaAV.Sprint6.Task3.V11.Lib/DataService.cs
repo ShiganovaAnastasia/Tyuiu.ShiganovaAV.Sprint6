@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
@@ -25,18 +24,22 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
 
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
-
-            var rowsList = Enumerable.Range(0, rows)
-                .Select(i => Enumerable.Range(0, cols).Select(j => matrix[i, j]).ToArray())
-                .OrderBy(row => row[0])
-                .ToArray();
-
             int[,] result = new int[rows, cols];
-            for (int i = 0; i < rows; i++)
+            Array.Copy(matrix, result, matrix.Length);
+
+            for (int i = 0; i < rows - 1; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = i + 1; j < rows; j++)
                 {
-                    result[i, j] = rowsList[i][j];
+                    if (result[i, 0] > result[j, 0])
+                    {
+                        for (int k = 0; k < cols; k++)
+                        {
+                            int temp = result[i, k];
+                            result[i, k] = result[j, k];
+                            result[j, k] = temp;
+                        }
+                    }
                 }
             }
 
