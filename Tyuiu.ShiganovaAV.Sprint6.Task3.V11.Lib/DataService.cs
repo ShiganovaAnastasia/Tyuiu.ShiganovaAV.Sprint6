@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint1;
+﻿using System;
+using System.Linq;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
@@ -16,6 +17,7 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
                 { -3,   1, -1,   5,  1 }
             };
         }
+
         public int[,] Calculate(int[,] matrix)
         {
             if (matrix == null)
@@ -24,27 +26,21 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
 
-            int[][] rowsArray = new int[rows][];
-            for (int i = 0; i < rows; i++)
-            {
-                rowsArray[i] = new int[cols];
-                for (int j = 0; j < cols; j++)
-                {
-                    rowsArray[i][j] = matrix[i, j];
-                }
-            }
-            var sortedRows = rowsArray.OrderBy(row => row[0]).ToArray();
+            var rowsList = Enumerable.Range(0, rows)
+                .Select(i => Enumerable.Range(0, cols).Select(j => matrix[i, j]).ToArray())
+                .OrderBy(row => row[0])
+                .ToArray();
 
-            int[,] sortedMatrix = new int[rows, cols];
+            int[,] result = new int[rows, cols];
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    sortedMatrix[i, j] = sortedRows[i][j];
+                    result[i, j] = rowsList[i][j];
                 }
             }
 
-            return sortedMatrix;
+            return result;
         }
     }
 }
