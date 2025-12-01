@@ -38,7 +38,7 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task0.V19
 
         private void buttonHelp_SAV_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Таск 0 выполнил студент группы РИСб-23-1 Шиганова Анастасия Викторовна",
+            MessageBox.Show("Таск 0 выполнил студент группы ПИНб-25-1 Шиганова Анастасия Владимировна",
                 "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private PictureBox pictureBoxLogo_SAV;
