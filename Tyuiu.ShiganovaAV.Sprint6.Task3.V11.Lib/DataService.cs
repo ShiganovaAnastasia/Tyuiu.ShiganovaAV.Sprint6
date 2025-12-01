@@ -25,7 +25,13 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
             int rows = matrix.GetLength(0);
             int cols = matrix.GetLength(1);
             int[,] result = new int[rows, cols];
-            Array.Copy(matrix, result, matrix.Length);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    result[i, j] = matrix[i, j];
+                }
+            }
 
             for (int i = 0; i < rows - 1; i++)
             {
@@ -33,12 +39,9 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
                 {
                     if (result[i, 0] > result[j, 0])
                     {
-                        for (int k = 0; k < cols; k++)
-                        {
-                            int temp = result[i, k];
-                            result[i, k] = result[j, k];
-                            result[j, k] = temp;
-                        }
+                        int temp = result[i, 0];
+                        result[i, 0] = result[j, 0];
+                        result[j, 0] = temp;
                     }
                 }
             }
