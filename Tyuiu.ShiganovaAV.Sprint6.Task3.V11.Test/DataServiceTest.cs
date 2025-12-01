@@ -8,10 +8,9 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Test
     {
         [TestMethod]
         public void ValidCalculate()
-            {
+        {
             DataService ds = new DataService();
 
-            // Создаем НЕОТСОРТИРОВАННУЮ матрицу вручную
             int[,] matrix = new int[5, 5]
             {
                 { 27, -15, 14,  2, 27 },
@@ -21,10 +20,8 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Test
                 { -3,   1, -1,   5,  1 }
             };
 
-            // Вызываем Calculate для сортировки
             int[,] result = ds.Calculate(matrix);
 
-            // Ожидаемый результат после сортировки первого столбца
             int[,] expected = {
                 { -13, -15, 14,   2, 27 },
                 {  -8,  14, -10, 33,  0 },
@@ -44,3 +41,4 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Test
             }
         }
     }
+}
