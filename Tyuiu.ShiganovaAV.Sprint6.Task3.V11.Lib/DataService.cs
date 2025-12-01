@@ -5,18 +5,6 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
 {
     public class DataService : ISprint6Task3V11
     {
-        public int[,] GetMatrix()
-        {
-            return new int[5, 5]
-            {
-                { 27, -15, 14,  2, 27 },
-                { -8,  14, -10, 33,  0 },
-                {  1,   7, -11, -11, 23 },
-                { -13, -20, 15, -16, 34 },
-                { -3,   1, -1,   5,  1 }
-            };
-        }
-
         public int[,] Calculate(int[,] matrix)
         {
             if (matrix == null)
@@ -26,6 +14,7 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
             int cols = matrix.GetLength(1);
             int[,] result = new int[rows, cols];
 
+            // Копируем всю матрицу
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
@@ -34,15 +23,18 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task3.V11.Lib
                 }
             }
 
+            // Просто берем все первые элементы и сортируем их
             for (int i = 0; i < rows - 1; i++)
             {
                 for (int j = i + 1; j < rows; j++)
                 {
                     if (result[i, 0] > result[j, 0])
                     {
+                        // Меняем местами ТОЛЬКО первый элемент
                         int temp = result[i, 0];
                         result[i, 0] = result[j, 0];
                         result[j, 0] = temp;
+                        // ВСЕ ОСТАЛЬНЫЕ ЭЛЕМЕНТЫ ОСТАЮТСЯ НА МЕСТЕ!
                     }
                 }
             }
