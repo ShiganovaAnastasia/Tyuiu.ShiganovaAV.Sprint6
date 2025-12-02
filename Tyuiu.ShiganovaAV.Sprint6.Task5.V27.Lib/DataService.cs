@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
-using tyuiu.cources.programming.interfaces.Sprint6;
+using System.Collections.Generic;
 
 namespace Tyuiu.ShiganovaAV.Sprint6.Task5.V27.Lib
 {
-    public class DataService : ISprint6Task5V27
+    public class DataService
     {
         public double[] LoadFromDataFile(string path)
         {
@@ -14,15 +15,38 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task5.V27.Lib
             }
 
             string[] lines = File.ReadAllLines(path);
-            double[] result = new double[lines.Length];
+            List<double> result = new List<double>();
 
-            for (int i = 0; i < lines.Length; i++)
+            foreach (string line in lines)
             {
-                string line = lines[i].Replace(',', '.');
-                result[i] = Convert.ToDouble(line);
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+
+                string normalizedLine = line.Replace(',', '.');
+
+                if (double.TryParse(normalizedLine,
+                    NumberStyles.Any,
+                    CultureInfo.InvariantCulture,
+                    out double number))
+                {
+                    if (Math.Abs(number % 5) > 0.00001)
+                    {
+                        double roundedNumber = Math.Round(number, 3);
+                        result.Add(roundedNumber);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Не удалось распарсить строку: '{line}'");
+                }
             }
 
-            return result;
+            if (result.Count == 0)
+            {
+                return new double[] { 0 };
+            }
+
+            return result.ToArray();
         }
     }
 }
