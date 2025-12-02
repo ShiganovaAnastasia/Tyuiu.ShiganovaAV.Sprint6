@@ -9,11 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="FormMain" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
     <PackageReference Include="System.Windows.Forms.DataVisualization" Version="1.0.0-prerelease.20110.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tyuiu.ShiganovaAV.Sprint6.Task4.V5.Lib\Tyuiu.ShiganovaAV.Sprint6.Task4.V5.Lib.csproj" />
+    <ProjectReference Include="..\Tyuiu.ShiganovaAV.Sprint6.Task5.V27.Lib\Tyuiu.ShiganovaAV.Sprint6.Task5.V27.Lib.csproj" />
   </ItemGroup>
 
 </Project>
