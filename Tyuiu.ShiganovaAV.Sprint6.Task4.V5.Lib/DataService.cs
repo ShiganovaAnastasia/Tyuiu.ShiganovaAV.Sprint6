@@ -1,5 +1,6 @@
 ﻿using System;
 using tyuiu.cources.programming.interfaces.Sprint6;
+
 namespace Tyuiu.ShiganovaAV.Sprint6.Task4.V5.Lib
 {
     public class DataService : ISprint6Task4V5
@@ -26,7 +27,7 @@ namespace Tyuiu.ShiganovaAV.Sprint6.Task4.V5.Lib
                 else
                 {
                     double value = (2 * Math.Sin(x)) / denominator + Math.Cos(x) - 14 * x;
-                    resultArray[i] = Math.Round(value, 2);
+                    resultArray[i] = Math.Round(value, 2, MidpointRounding.AwayFromZero);
                 }
             }
 
